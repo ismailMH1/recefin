@@ -3,7 +3,7 @@
 }
 
 .container {
-  padding: 20px;
+  padding: 40px;
 }
 
 h1 {
@@ -13,7 +13,7 @@ h1 {
 
 p {
   font-size: 1em;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .recipe-list {
@@ -32,7 +32,7 @@ p {
     max-width: calc(45% - 20px);
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+
   }
 
   @media (max-width: 768px) {
@@ -58,7 +58,7 @@ p {
 .recipe-meta {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .recipe-meta span {
@@ -102,14 +102,17 @@ p {
 .nav {
     display: flex;
     align-items: center;
-    padding: 10px;
+
+
   }
 
   .back-button {
     background: none;
-    border: none;
+    border: none !important;
     cursor: pointer;
     font-size: 2em;
+     color: #0f0f0f;
+
   }
 
   .arrow {
@@ -130,14 +133,14 @@ p {
     }
 
     .icon {
-      width: 30px; /* Adjust icon size for smaller screens */
-      margin-right: 8px; /* You can also adjust the gap for smaller screens */
+      width: 30px;
+      margin-right: 8px;
     }
   }
 
   @media (max-width: 480px) {
     .icon {
-      width: 25px; /* Further adjust icon size for very small screens */
-      margin-right: 6px; /* Adjust the gap for very small screens */
+      width: 25px;
+      margin-right: 6px;
     }
   }

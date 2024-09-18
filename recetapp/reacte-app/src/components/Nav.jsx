@@ -7,9 +7,10 @@ const Nav = () => {
 
   return (
     <div className="nav">
-      <button className="back-button" onClick={() => navigate(-1)}>
-        <i className="fas fa-arrow-right arrow"></i>
-      </button>
+      {  <a href="#" className="back-button"onClick={() => navigate(-1)} >
+      <i className="fas fa-arrow-right arrow"></i>
+              </a>}
+              
     </div>
   );
 };

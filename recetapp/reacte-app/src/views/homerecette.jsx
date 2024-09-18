@@ -1,6 +1,6 @@
 // src/pages/HomeRecette.js
 import React, { useEffect, useState } from 'react';
-import axios from '../api/axios'; // Import axios configuration
+import axios from '../api/axios'; 
 import '../App.css';
 import Nav from '../components/Nav';
 import walletIcon from '../assets/wallet.svg';
