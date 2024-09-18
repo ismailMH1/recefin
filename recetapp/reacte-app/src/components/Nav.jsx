@@ -8,7 +8,7 @@ const Nav = () => {
   return (
     <div className="nav">
       {  <a href="#" className="back-button"onClick={() => navigate(-1)} >
-      <i className="fas fa-arrow-right arrow"></i>
+      <i className="fas fa-arrow-left arrow"></i>
               </a>}
               
     </div>
