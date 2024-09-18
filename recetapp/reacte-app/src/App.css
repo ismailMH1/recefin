@@ -8,12 +8,17 @@
 
 h1 {
   font-size: 2em;
-  margin-bottom: 10px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: 'Roboto', sans-serif;
 }
 
 p {
   font-size: 1em;
-  margin-bottom: 10px;
+  font-weight: medium;
+  color: #79767D;
+  margin-bottom: 5px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .recipe-list {
@@ -25,11 +30,11 @@ p {
 
 .recipe-card {
     background: white;
-    border-radius: 10px;
+    border-radius: 16px; /* Increased border-radius for smaller screens */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    flex: 1 1 calc(45% - 20px);
-    max-width: calc(45% - 20px);
+    flex: 1 1 calc(30% - 20px); /* Adjusted from 45% to 30% */
+    max-width: calc(30% - 20px); /* Adjusted from 45% to 30% */
     display: flex;
     flex-direction: column;
 
@@ -43,8 +48,17 @@ p {
   }
 
 .recipe-image {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Set width to 100% for desktop */
+  height: auto; /* Maintain aspect ratio */
+
+}
+
+@media (max-width: 600px) {
+  .recipe-image {
+    width: 328px; /* Set width to 328px for smaller screens */
+    height: 143px;
+
+  }
 }
 
 .recipe-info {
@@ -76,7 +90,7 @@ p {
   background: transparent;
   color:#F16E00;
   border: none;
-  padding: 10px;
+  /* padding: 10px; */
   border-radius: 10px;
   cursor: pointer;
   align-self: flex-end;
