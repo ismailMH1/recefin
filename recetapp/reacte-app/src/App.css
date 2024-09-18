@@ -1,42 +1,143 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.recipe-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex: 1 1 calc(45% - 20px);
+    max-width: calc(45% - 20px);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .recipe-card {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+
+.recipe-image {
+  width: 100%;
+  height: auto;
+}
+
+.recipe-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.recipe-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.recipe-meta span {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.recipe-description {
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+
+.discover-button {
+  background: transparent;
+  color:#F16E00;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  align-self: flex-end;
   text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.discover-button i {
+  margin-left: 5px;
+  color: #F16E00;
+  align-items: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 768px) {
+  .recipe-card {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 10px;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2em;
+  }
 
-.read-the-docs {
-  color: #888;
-}
+  .arrow {
+    display: inline-block;
+    transform: rotate(180deg);
+  }
+
+  .icon {
+    width: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    .recipe-card {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+
+    .icon {
+      width: 30px; /* Adjust icon size for smaller screens */
+      margin-right: 8px; /* You can also adjust the gap for smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .icon {
+      width: 25px; /* Further adjust icon size for very small screens */
+      margin-right: 6px; /* Adjust the gap for very small screens */
+    }
+  }
