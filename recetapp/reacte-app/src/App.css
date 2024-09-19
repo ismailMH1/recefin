@@ -234,3 +234,45 @@ margin-right: 8px;
   margin-right: 6px;
 }
 }
+
+.etape-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    margin-bottom: 15px; /* Spacing between steps */
+    padding: 10px; /* Padding for better touch targets */
+ 
+}
+
+.etape-item {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    margin-bottom: 15px; /* Spacing between steps */
+}
+
+.etape-order {
+    font-weight: bold; /* Emphasize the order */
+    color: #F16E00; /* Consistent color for branding */
+    margin-right: 5px; /* Small gap between order and name */
+    display: inline; /* Keep order inline with the name */
+}
+
+.etape-name {
+    font-size: 1.2em; /* Slightly larger for visibility */
+    margin: 0; /* Remove default margin */
+}
+
+.etape-description {
+    font-size: 0.9em; /* Standard size for descriptions */
+    line-height: 1.4; /* Improved readability */
+    margin-top: 5px; /* Spacing above */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ingredients-title, .etape-title {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+    }
+    .ingredients, .etape-description {
+        font-size: 0.9em; /* Adjust font size for smaller screens */
+    }
+}
