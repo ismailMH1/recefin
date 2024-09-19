@@ -34,7 +34,7 @@ const HomeRecette = () => {
       <div className="recipe-card skeleton-card">
         <div className="skeleton skeleton-image"></div>
         <div className="recipe-info">
-          <div className="recipe-meta">
+          <div className="recipe-meta skeleton-meta">
             <span className="skeleton skeleton-icon"></span>
             <span className="skeleton skeleton-icon"></span>
             <span className="skeleton skeleton-icon"></span>
