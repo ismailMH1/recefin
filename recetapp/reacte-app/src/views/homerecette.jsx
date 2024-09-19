@@ -69,11 +69,12 @@ const HomeRecette = () => {
           <span><img src={chefIcon} alt="Difficulty" className="icon" /> {selectedRecipe.difficulty}</span>
           <span><img src={walletIcon} alt="Budget" className="icon" /> {selectedRecipe.budget}</span>
         </div>
+        <h4>Ingredients</h4>
         <p>{selectedRecipe.ingredients}</p>
-        <h3>Étapes</h3>
+        <h4>{selectedRecipe.etape}</h4>
         {selectedRecipe.etapes.map((etape, index) => (
           <div key={index}>
-            <h4>Étape {index + 1}</h4>
+            <h6>{etape.order}</h6><h4>{etape.name}</h4>
             <p>{etape.description}</p>
           </div>
         ))}
