@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from '../api/axios'; 
+import axios from '../api/axios';
 import '../App.css'; // Ensure your CSS is imported correctly
 import Nav from '../components/Nav';
 import walletIcon from '../assets/wallet.svg';
@@ -28,9 +28,8 @@ const HomeRecette = () => {
   return (
     <div className="container">
       <Nav />
-      <h1>Recettes</h1>
-      <p>Parcourez notre sélection pour découvrir de nouvelles recettes passionnantes que vous pouvez essayer chez vous.</p>
-      <div className="recipe-list">
+      <h2>Recettes</h2>
+      <p className="first-paragraph">Parcourez notre sélection pour découvrir de nouvelles recettes passionnantes que vous pouvez essayer chez vous.</p>      <div className="recipe-list">
         {recipes.map((recipe) => (
           <div className="recipe-card" key={recipe.id}>
             <img src={`http://127.0.0.1:8000/images/${recipe.image}`} alt={recipe.title} className="recipe-image" />

@@ -6,17 +6,24 @@
 padding: 25px;
 }
 
-h1 {
+h2 {
 font-size: 2em;
 font-weight: bold;
-margin-bottom: 5px;
+margin-bottom: 0px;
+margin-top: 0px;
 }
 
 p {
+
 font-size: 1em;
 font-weight: 500;
 color: #79767D;
 margin-bottom: 10px;
+}
+
+/* Adding a specific class to the first paragraph */
+.first-paragraph {
+  margin-top: 0px; /* Adjust this value as needed */
 }
 
 .recipe-list {
@@ -117,7 +124,7 @@ color: #F16E00;
   background: none;
   border: none !important;
   cursor: pointer;
-  font-size: 2em;
+  font-size: 1.5em;
    color: #0f0f0f;
 
 }
