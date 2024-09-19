@@ -97,7 +97,7 @@ padding: 25px;
 
 h2 {
 font-size: 2em;
-font-weight: bold;
+font-weight: 700;
 margin-bottom: 0px;
 margin-top: 0px;
 }
@@ -107,7 +107,7 @@ font-size: 1em;
 font-weight: 500;
 color: #79767D;
 margin-bottom: 10px;
-margin-top: 15px;
+
 }
 
 
@@ -121,7 +121,7 @@ margin-top: 15px;
 .recipe-list {
 display: flex;
 flex-wrap: wrap;
-gap: 20px;
+gap: 8px;
 }
 
 .recipe-card {
@@ -133,6 +133,7 @@ flex: 1 1 calc(33.333% - 20px);
 max-width: calc(33.333% - 20px);
 display: flex;
 flex-direction: column;
+
 }
 
 @media (max-width: 1024px) {

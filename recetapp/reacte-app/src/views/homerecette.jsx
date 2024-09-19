@@ -104,8 +104,8 @@ const HomeRecette = () => {
                   </div>
                   <p className="recipe-description">{recipe.description}</p>
                   <button className="discover-button" onClick={() => handleDiscoverClick(recipe.id)}>
-  Découvrir <i className="fas fa-arrow-right"></i>
-</button>
+                   Découvrir <i className="fas fa-arrow-right"></i>
+                     </button>
                 </div>
               </div>
             ))
