@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('difficulty');
             $table->string('budget');
             $table->string('image'); // URL or path to the recette image
+            $table->string('ingredients');
             $table->timestamps();
         });
     }

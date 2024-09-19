@@ -9,7 +9,7 @@ class recette extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'duration', 'difficulty', 'budget', 'image'];
+    protected $fillable = ['title', 'description', 'duration', 'difficulty', 'budget', 'image','ingredients'];
 
     public function etapes()
     {

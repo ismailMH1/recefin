@@ -24,6 +24,8 @@ class RecetteSeeder extends Seeder
             'difficulty' => 'Facile',
             'budget' => 'Bas',
             'image' => 'tomato_salad_image.jpg',
+            'ingredients' => '200g tomates, 50g basilic frais, 30ml huile d\'olive, 1 pincée de sel, 1 pincée de poivre',
+
         ]);
 
         Recette::create([
@@ -33,6 +35,8 @@ class RecetteSeeder extends Seeder
             'difficulty' => 'Moyenne',
             'budget' => 'Bas',
             'image' => 'carrot_soup_image.jpg',
+            'ingredients' => '500g carottes, 1 oignon, 2 gousses d\'ail, 1 litre de bouillon de légumes, 30g gingembre, 30ml huile d\'olive, sel, poivre',
+
         ]);
 
         Recette::create([
@@ -42,6 +46,8 @@ class RecetteSeeder extends Seeder
             'difficulty' => 'Moyenne',
             'budget' => 'Moyen',
             'image' => 'stuffed_zucchini_image.jpg',
+            'ingredients' => '4 courgettes, 300g viande hachée, 1 oignon, 2 gousses d\'ail, 100g fromage râpé, 200g tomates concassées, 30ml huile d\'olive, sel, poivre',
+
         ]);
 
         Recette::create([
@@ -51,6 +57,8 @@ class RecetteSeeder extends Seeder
             'difficulty' => 'Difficile',
             'budget' => 'Moyen',
             'image' => 'eggplant parmesan.jpg',
+            'ingredients' => '2 aubergines, 400g sauce tomate, 200g mozzarella, 50g parmesan râpé, 1 gousse d\'ail, 30ml huile d\'olive, sel, poivre',
+
         ]);
 
         Recette::create([
@@ -60,6 +68,8 @@ class RecetteSeeder extends Seeder
             'difficulty' => 'Difficile',
             'budget' => 'Élevé',
             'image' => 'spinach_lasagna.jpg',
+            'ingredients' => '250g pâtes à lasagne, 500g épinards, 250g ricotta, 400g sauce tomate, 200g mozzarella, 50g parmesan râpé, sel, poivre',
+
         ]);
 
         Recette::create([
@@ -69,6 +79,8 @@ class RecetteSeeder extends Seeder
             'difficulty' => 'Facile',
             'budget' => 'Bas',
             'image' => 'garlic mashed potatoes.jpg',
+            'ingredients' => '1kg pommes de terre, 3 gousses d\'ail, 100ml lait, 50g beurre, sel, poivre',
+
         ]);
 
         Recette::create([
@@ -78,6 +90,7 @@ class RecetteSeeder extends Seeder
             'difficulty' => 'Facile',
             'budget' => 'Bas',
             'image' => 'cucumber_salad.jpg',
+            'ingredients' => '200g concombre, 300g yaourt, 1 citron',
         ]);
 
         Recette::create([
@@ -87,6 +100,7 @@ class RecetteSeeder extends Seeder
             'difficulty' => 'Moyenne',
             'budget' => 'Moyen',
             'image' => 'roasted_peppers.jpg',
+            'ingredients' => '4 carottes, 300g viande hachée, 1 oignon, 2 gousses d\'ail, 100g fromage râpé, 200g tomates concassées, 30ml huile d\'olive, sel, poivre',
         ]);
 
         Recette::create([
@@ -96,6 +110,7 @@ class RecetteSeeder extends Seeder
             'difficulty' => 'Moyenne',
             'budget' => 'Moyen',
             'image' => 'broccoli_quiche.jpg',
+            'ingredients' => '200g brocoli, 50g cheddar, 30ml huile d\'olive, 1 pincée de sel, 1 pincée de poivre',
         ]);
 
         Recette::create([
@@ -105,6 +120,7 @@ class RecetteSeeder extends Seeder
             'difficulty' => 'Moyenne',
             'budget' => 'Bas',
             'image' => 'cauliflower_gratin.jpg',
+            'ingredients' => '200g tomates, 50g basilic frais, 30ml huile d\'olive, 1 pincée de sel, 1 pincée de poivre',
         ]);
     }
 }

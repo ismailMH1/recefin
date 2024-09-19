@@ -38,7 +38,10 @@ class RecetteController extends Controller
      */
     public function show(recette $recette)
     {
-        //
+        // Eager load the related 'etapes'
+        $recette->load('etapes');
+
+        return response()->json($recette);
     }
 
     /**
