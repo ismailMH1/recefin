@@ -287,3 +287,28 @@ margin-right: 8px;
         font-size: 0.9em;
     }
 }
+
+
+.recipe-details {
+    padding: 15px;
+}
+
+/* Responsive adjustments for details */
+@media (max-width: 768px) {
+    .recipe-details {
+        padding: 10px; 
+    }
+
+  
+    .recipe-meta span {
+        margin-bottom: 5px; 
+    }
+
+    .ingredients-title, .etape-title {
+        font-size: 1.5em; 
+    }
+
+    .ingredients, .etape-description {
+        font-size: 0.9em; 
+    }
+}
