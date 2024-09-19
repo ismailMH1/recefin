@@ -5,11 +5,14 @@ import Nav from '../components/Nav';
 import walletIcon from '../assets/wallet.svg';
 import clockIcon from '../assets/horloge.svg';
 import chefIcon from '../assets/chef.svg';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const HomeRecette = () => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedRecipe, setSelectedRecipe] = useState(null); // State to store the selected recipe
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const { recipeId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get('/api/recipes')
@@ -28,17 +31,23 @@ const HomeRecette = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
 
-  const handleDiscoverClick = (recipeId) => {
-    axios.get(`/api/recipes/${recipeId}`)
-      .then(response => {
-        setSelectedRecipe(response.data); // Set the selected recipe with etapes included
-      })
-      .catch(error => {
-        console.error('There was an error fetching the recipe details!', error);
-      });
+    if (recipeId) {
+      axios.get(`/api/recipes/${recipeId}`)
+        .then(response => {
+          setSelectedRecipe(response.data);
+        })
+        .catch(error => {
+          console.error('There was an error fetching the recipe details!', error);
+        });
+    }
+  }, [recipeId]);
+
+  const handleBackClick = () => {
+    setSelectedRecipe(null); 
+    navigate('/'); 
   };
+  
 
   const renderSkeletonCard = () => {
     return (
@@ -57,36 +66,33 @@ const HomeRecette = () => {
     );
   };
 
-  return (
-    <div className="container">
-    <Nav onBackClick={() => setSelectedRecipe(null)} />
+return (
+  <div className="container">
+    <Nav onBackClick={handleBackClick} />
     {selectedRecipe ? (
-      <div className="recipe-details">
-        <h2>{selectedRecipe.title}</h2>
-        <img src={`http://127.0.0.1:8000/images/${selectedRecipe.image}`} alt={selectedRecipe.title} className="details-image" />
-        <div className="recipe-meta">
-          <span><img src={clockIcon} alt="Duration" className="icon" /> {selectedRecipe.duration}</span>
-          <span><img src={chefIcon} alt="Difficulty" className="icon" /> {selectedRecipe.difficulty}</span>
-          <span><img src={walletIcon} alt="Budget" className="icon" /> {selectedRecipe.budget}</span>
-        </div>
-        <h4 className="ingredients-title">Ingredients</h4>
-        <p className="ingredients">{selectedRecipe.ingredients}</p>
-        <h4 className="etape-title">{selectedRecipe.etape}</h4>
-        {selectedRecipe.etapes.map((etape, index) => (
-          <div key={index} className="etape-item">
-            <span className="etape-order">{etape.order}</span>
-            <h4 className="etape-name">{etape.name}</h4>
-            <p className="etape-description">{etape.description}</p>
+        <div className="recipe-details">
+          <h2>{selectedRecipe.title}</h2>
+          <img src={`http://127.0.0.1:8000/images/${selectedRecipe.image}`} alt={selectedRecipe.title} className="details-image" />
+          <div className="recipe-meta">
+            <span><img src={clockIcon} alt="Duration" className="icon" /> {selectedRecipe.duration}</span>
+            <span><img src={chefIcon} alt="Difficulty" className="icon" /> {selectedRecipe.difficulty}</span>
+            <span><img src={walletIcon} alt="Budget" className="icon" /> {selectedRecipe.budget}</span>
           </div>
-        ))}
-        <button onClick={() => setSelectedRecipe(null)} className="back-button">
-          Retour aux recettes
-        </button>
-      </div>
+          <h4 className="ingredients-title">Ingredients</h4>
+          <p className="ingredients">{selectedRecipe.ingredients}</p>
+          <h4 className="etape-title">{selectedRecipe.etape}</h4>
+          {selectedRecipe.etapes.map((etape, index) => (
+            <div key={index} className="etape-item">
+              <span className="etape-order">{etape.order}</span>
+              <h4 className="etape-name">{etape.name}</h4>
+              <p className="etape-description">{etape.description}</p>
+            </div>
+          ))}
+        </div>
       ) : (
         <div className="recipe-list">
-             <h2>Recettes</h2>
-             <p className="first-paragraph">Parcourez notre sélection pour découvrir de nouvelles recettes passionnantes que vous pouvez essayer chez vous.</p>
+          <h2>Recettes</h2>
+          <p className="first-paragraph">Parcourez notre sélection pour découvrir de nouvelles recettes passionnantes que vous pouvez essayer chez vous.</p>
           {loading ? (
             <>
               {renderSkeletonCard()}
@@ -94,7 +100,7 @@ const HomeRecette = () => {
               {renderSkeletonCard()}
             </>
           ) : (
-            recipes.map((recipe) => (
+            recipes.map((recipe) => ( // Ensure 'recipe' is defined in this scope
               <div className="recipe-card" key={recipe.id}>
                 <img src={`http://127.0.0.1:8000/images/${recipe.image}`} alt={recipe.title} className="recipe-image" />
                 <div className="recipe-info">
@@ -104,9 +110,9 @@ const HomeRecette = () => {
                     <span><img src={walletIcon} alt="Budget" className="icon" /> {recipe.budget}</span>
                   </div>
                   <p className="recipe-description">{recipe.description}</p>
-                  <button className="discover-button" onClick={() => handleDiscoverClick(recipe.id)}>
-                   Découvrir <i className="fas fa-arrow-right"></i>
-                     </button>
+                  <button className="discover-button" onClick={() => navigate(`/${recipe.id}`)}> {/* Updated path */}
+                  Découvrir <i className="fas fa-arrow-right"></i>
+                </button>
                 </div>
               </div>
             ))

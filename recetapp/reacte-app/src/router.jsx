@@ -1,14 +1,15 @@
-import {createBrowserRouter} from 'react-router-dom';
-import Home from './views/homerecette.jsx';
-
+import { createBrowserRouter } from 'react-router-dom';
+import HomeRecette from './views/homerecette.jsx'; // Ensure this path is correct
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Home />,
-    },
-    
-   
+  {
+    path: '/', // Route for home page
+    element: <HomeRecette />,
+  },
+  {
+    path: '/:recipeId', // Route for recipe details
+    element: <HomeRecette />,
+  },
 ]);
 
 export default router;

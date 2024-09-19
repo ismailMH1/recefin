@@ -1,16 +1,17 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '../App.css';
 
-const Nav = () => {
-  const navigate = useNavigate();
+const Nav = ({ onBackClick }) => { // {{ edit_1 }}
+  const location = useLocation();
 
   return (
     <div className="nav">
-      {  <a href="#" className="back-button"onClick={() => navigate(-1)} >
-      <i className="fas fa-arrow-left arrow"></i>
-              </a>}
-              
+      {location.pathname !== '/' && ( // Only show the back button if not on the home page
+        <button className="back-button" onClick={onBackClick}>
+          <i className="fas fa-arrow-left arrow"></i>
+        </button>
+      )}
     </div>
   );
 };
