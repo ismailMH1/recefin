@@ -29,6 +29,23 @@ const HomeRecette = () => {
       });
   }, []);
 
+  const renderSkeletonCard = () => {
+    return (
+      <div className="recipe-card skeleton-card">
+        <div className="skeleton skeleton-image"></div>
+        <div className="recipe-info">
+          <div className="recipe-meta">
+            <span className="skeleton skeleton-icon"></span>
+            <span className="skeleton skeleton-icon"></span>
+            <span className="skeleton skeleton-icon"></span>
+          </div>
+          <div className="skeleton skeleton-description"></div>
+          <div className="skeleton skeleton-button"></div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="container">
       <Nav />
@@ -36,11 +53,10 @@ const HomeRecette = () => {
       <p className="first-paragraph">Parcourez notre sélection pour découvrir de nouvelles recettes passionnantes que vous pouvez essayer chez vous.</p>
       <div className="recipe-list">
         {loading ? (
-         
           <>
-            <div className="skeleton-card skeleton"></div>
-            <div className="skeleton-card skeleton"></div>
-            <div className="skeleton-card skeleton"></div>
+            {renderSkeletonCard()}
+            {renderSkeletonCard()}
+            {renderSkeletonCard()}
           </>
         ) : (
           recipes.map((recipe) => (
