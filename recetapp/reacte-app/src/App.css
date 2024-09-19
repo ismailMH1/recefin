@@ -14,16 +14,18 @@ margin-top: 0px;
 }
 
 p {
-
 font-size: 1em;
 font-weight: 500;
 color: #79767D;
 margin-bottom: 10px;
 }
 
-/* Adding a specific class to the first paragraph */
+
 .first-paragraph {
-  margin-top: 0px; /* Adjust this value as needed */
+  margin-top: 0px; 
+  font-size: 12px;
+  line-height: 16px; 
+  font-family: 'Roboto', sans-serif;
 }
 
 .recipe-list {
@@ -37,7 +39,7 @@ background: white;
 border-radius: 20px;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 overflow: hidden;
-flex: 1 1 calc(33.333% - 20px); /* 3 columns on larger screens */
+flex: 1 1 calc(33.333% - 20px); 
 max-width: calc(33.333% - 20px);
 display: flex;
 flex-direction: column;
@@ -45,7 +47,7 @@ flex-direction: column;
 
 @media (max-width: 1024px) {
 .recipe-card {
-  flex: 1 1 calc(50% - 20px); /* 2 columns for tablets */
+  flex: 1 1 calc(50% - 20px);
   max-width: calc(50% - 20px);
 }
 }
@@ -128,8 +130,6 @@ color: #F16E00;
    color: #0f0f0f;
 
 }
-
-
 
 .icon {
 width: 30px;
