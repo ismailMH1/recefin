@@ -69,14 +69,14 @@ const HomeRecette = () => {
           <span><img src={chefIcon} alt="Difficulty" className="icon" /> {selectedRecipe.difficulty}</span>
           <span><img src={walletIcon} alt="Budget" className="icon" /> {selectedRecipe.budget}</span>
         </div>
-        <h4 className="ingredients-title">Ingredients</h4> 
+        <h4 className="ingredients-title">Ingredients</h4>
         <p className="ingredients">{selectedRecipe.ingredients}</p>
         <h4 className="etape-title">{selectedRecipe.etape}</h4>
         {selectedRecipe.etapes.map((etape, index) => (
           <div key={index} className="etape-item">
-            <span className="etape-order">{etape.order}</span> {/* Changed to span for inline display */}
+            <span className="etape-order">{etape.order}</span>
             <h4 className="etape-name">{etape.name}</h4>
-            <p className="etape-description">{etape.description}</p> 
+            <p className="etape-description">{etape.description}</p>
           </div>
         ))}
         <button onClick={() => setSelectedRecipe(null)} className="back-button">

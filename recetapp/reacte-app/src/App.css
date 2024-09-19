@@ -3,7 +3,7 @@
 }
 
 
-/* Skeleton Loader Styles */
+
 .skeleton-card {
     background: white;
     border-radius: 20px;
@@ -75,7 +75,7 @@
 align-items: center;
 }
 
-/* Skeleton Pulse Effect */
+
 @keyframes pulse {
   0% {
     opacity: 1;
@@ -145,7 +145,7 @@ flex-direction: column;
 
 @media (max-width: 768px) {
 .recipe-card {
-  flex: 1 1 100%; /* 1 column for mobile */
+  flex: 1 1 100%; 
   max-width: 100%;
 }
 }
@@ -237,42 +237,45 @@ margin-right: 8px;
 
 .etape-container {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    margin-bottom: 15px; /* Spacing between steps */
-    padding: 10px; /* Padding for better touch targets */
- 
+    flex-direction: column;
+    margin-bottom: 15px;
+    padding: 10px;
+
 }
 
 .etape-item {
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack items vertically */
-    margin-bottom: 15px; /* Spacing between steps */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    padding: 10px;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
 .etape-order {
-    font-weight: bold; /* Emphasize the order */
-    color: #F16E00; /* Consistent color for branding */
-    margin-right: 5px; /* Small gap between order and name */
-    display: inline; /* Keep order inline with the name */
+    font-weight: bold;
+    color: #F16E00;
+    margin-right: 5px;
+    display: inline;
 }
 
 .etape-name {
-    font-size: 1.2em; /* Slightly larger for visibility */
-    margin: 0; /* Remove default margin */
+    font-size: 1.2em;
+    margin: 0;
 }
 
 .etape-description {
-    font-size: 0.9em; /* Standard size for descriptions */
-    line-height: 1.4; /* Improved readability */
-    margin-top: 5px; /* Spacing above */
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-top: 5px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .ingredients-title, .etape-title {
-        font-size: 1.2em; /* Adjust font size for smaller screens */
+        font-size: 1.2em;
     }
     .ingredients, .etape-description {
-        font-size: 0.9em; /* Adjust font size for smaller screens */
+        font-size: 0.9em;
     }
 }
