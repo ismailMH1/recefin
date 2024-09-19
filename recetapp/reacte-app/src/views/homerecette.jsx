@@ -63,7 +63,7 @@ const HomeRecette = () => {
     {selectedRecipe ? (
       <div className="recipe-details">
         <h2>{selectedRecipe.title}</h2>
-        <img src={`http://127.0.0.1:8000/images/${selectedRecipe.image}`} alt={selectedRecipe.title} className="recipe-image" />
+        <img src={`http://127.0.0.1:8000/images/${selectedRecipe.image}`} alt={selectedRecipe.title} className="details-image" />
         <div className="recipe-meta">
           <span><img src={clockIcon} alt="Duration" className="icon" /> {selectedRecipe.duration}</span>
           <span><img src={chefIcon} alt="Difficulty" className="icon" /> {selectedRecipe.difficulty}</span>
