@@ -549,34 +549,21 @@
 
   .etape-item {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    background-color: transparent;
-  }
+    align-items: flex-start; /* Align items to the start */
 
-  .etape-left {
-    margin-right: 10px;
+}
+
+.etape-left {
     display: flex;
-    align-items: center;
-  }
+    align-items: center; /* Align icon and name vertically */
 
-  .etape-icon {
+}
+
+.etape-icon {
     width: 24px;
     height: 24px;
-  }
 
-  .etape-right {
-    display: flex;
-    flex-direction: column; /* Ensures name and description stack */
-  }
-
-  .etape-name {
-    font-size: 1.2em;
-    margin: 0;
-  }
+}
 
 .etape-description {
     font-size: 0.9em;

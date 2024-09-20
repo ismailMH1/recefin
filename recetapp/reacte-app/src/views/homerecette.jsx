@@ -84,15 +84,18 @@ const HomeRecette = () => {
           <p className="ingredients">{selectedRecipe.ingredients}</p>
           <h4 className="etape-title">{selectedRecipe.etape}</h4>
           {selectedRecipe.etapes.map((etape, index) => (
-         <div key={index} className="etape-item">
-         <div className="etape-left">
-           <img src={stepIcon} alt="Step Icon" className="etape-icon" />
-         </div>
-         <div className="etape-right">
-           <h4 className="etape-name">{etape.name}</h4>
-           <p className="etape-description">{etape.description}</p>
-         </div>
-       </div>
+          <div key={index} className="etape-item">
+          <div className="etape-left">
+          <img src={stepIcon} alt="Step Icon" className="etape-icon"  />
+          </div>
+          <div className="etape-right">
+            <h4 className="etape-name">
+              {etape.name}
+
+            </h4>
+            <p className="etape-description">{etape.description}</p>
+          </div>
+        </div>
           ))}
         </div>
       ) : (
