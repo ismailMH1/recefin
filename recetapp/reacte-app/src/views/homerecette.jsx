@@ -6,6 +6,7 @@ import walletIcon from '../assets/wallet.svg';
 import clockIcon from '../assets/horloge.svg';
 import chefIcon from '../assets/chef.svg';
 import { useParams, useNavigate } from 'react-router-dom';
+import stepIcon from '../assets/steps.svg'; // Add this line at the top
 
 const HomeRecette = () => {
   const [recipes, setRecipes] = useState([]);
@@ -15,7 +16,7 @@ const HomeRecette = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-   
+
     axios.get('/api/recipes')
       .then(response => {
         if (Array.isArray(response.data)) {
@@ -72,22 +73,26 @@ const HomeRecette = () => {
       <Nav onBackClick={handleBackClick} />
       {selectedRecipe ? (
         <div className="recipe-details">
-          <h2>{selectedRecipe.title}</h2>
+          <h2 className='details-title'>{selectedRecipe.title}</h2>
           <img src={`http://127.0.0.1:8000/images/${selectedRecipe.image}`} alt={selectedRecipe.title} className="details-image" />
-          <div className="recipe-meta">
+          <div className="recipe-meta-details">
             <span><img src={clockIcon} alt="Duration" className="icon" /> {selectedRecipe.duration}</span>
             <span><img src={chefIcon} alt="Difficulty" className="icon" /> {selectedRecipe.difficulty}</span>
             <span><img src={walletIcon} alt="Budget" className="icon" /> {selectedRecipe.budget}</span>
           </div>
-          <h4 className="ingredients-title">Ingredients</h4>
+          <h4 className="ingredients-title">Ingrédients</h4>
           <p className="ingredients">{selectedRecipe.ingredients}</p>
           <h4 className="etape-title">{selectedRecipe.etape}</h4>
           {selectedRecipe.etapes.map((etape, index) => (
-            <div key={index} className="etape-item">
-              <span className="etape-order">{etape.order}</span>
-              <h4 className="etape-name">{etape.name}</h4>
-              <p className="etape-description">{etape.description}</p>
-            </div>
+         <div key={index} className="etape-item">
+         <div className="etape-left">
+             <img src={stepIcon} alt="Step Icon" className="etape-icon" />
+         </div>
+         <div className="etape-right">
+             <h4 className="etape-name">{etape.name}</h4>
+             <p className="etape-description">{etape.description}</p>
+         </div>
+     </div>
           ))}
         </div>
       ) : (
