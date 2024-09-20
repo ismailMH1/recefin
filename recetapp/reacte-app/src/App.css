@@ -91,7 +91,7 @@ align-items: center;
 
 
 
-.container {
+/* .container {
 padding: 25px;
 }
 
@@ -108,12 +108,13 @@ font-weight: 500;
 color: #79767D;
 margin-bottom: 10px;
 
-}
+} */
 
 
 .first-paragraph {
   margin-top: 0px;
   font-size: 12px;
+  font-weight: 600;
   line-height: 16px;
   font-family: 'Roboto', sans-serif;
 }
@@ -124,17 +125,7 @@ flex-wrap: wrap;
 gap: 8px;
 }
 
-.recipe-card {
-background: white;
-border-radius: 20px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-overflow: hidden;
-flex: 1 1 calc(33.333% - 20px);
-max-width: calc(33.333% - 20px);
-display: flex;
-flex-direction: column;
 
-}
 
 @media (max-width: 1024px) {
 .recipe-card {
@@ -150,12 +141,7 @@ flex-direction: column;
 }
 }
 
-.recipe-image {
 
-width: 100%;
-height: 200px;
-object-fit: cover;
-}
 
 .details-image {
 
@@ -175,18 +161,7 @@ justify-content: space-between;
 flex-grow: 1;
 }
 
-.recipe-meta {
-display: flex;
-justify-content: space-between;
-}
 
-.recipe-meta span {
-display: flex;
-align-items: center;
-font-size: 0.9em;
-font-weight: 500;
-color: #000000;
-}
 
 .recipe-description {
 flex-grow: 1;
@@ -197,40 +172,28 @@ color: #242326;
 margin-top: 9px;
 }
 
-.discover-button {
-background: transparent;
-color: #F16E00;
-border: none;
-cursor: pointer;
-text-align: center;
-text-decoration: none;
-display: flex;
-align-self: flex-end;
-align-items: center;
-font-size: 14px;
-font-weight: 500;
-}
-
-.discover-button i {
-margin-left: 5px;
-color: #F16E00;
-}
 
 
-.nav {
-  display: flex;
-  align-items: center;
 
-
-}
 
 .back-button {
-  background: none;
-  border: none !important;
-  cursor: pointer;
-  font-size: 1.5em;
-   color: #0f0f0f;
+    background: none;
+    border: none !important;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding-bottom: 0px;
+    display: flex;
+    overflow: hidden;
+    padding-left: 0px;
+    color: #0f0f0f;
 
+}
+
+
+
+.back-button i {
+    width: 21.33px;
+   
 }
 
 .icon {
@@ -296,19 +259,260 @@ margin-right: 8px;
 /* Responsive adjustments for details */
 @media (max-width: 768px) {
     .recipe-details {
-        padding: 10px; 
+        padding: 10px;
     }
 
-  
+
     .recipe-meta span {
-        margin-bottom: 5px; 
+        margin-bottom: 5px;
     }
 
     .ingredients-title, .etape-title {
-        font-size: 1.5em; 
+        font-size: 1.5em;
     }
 
     .ingredients, .etape-description {
-        font-size: 0.9em; 
+        font-size: 0.9em;
     }
+}
+
+
+
+
+.container {
+    padding: 10px 18px!important;
+}
+
+.recipe-list h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-size: 32px !important;
+}
+
+p {
+    font-size: 1em;
+    font-weight: 500;
+    color: #79767D;
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .recipe-card, .skeleton-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .recipe-meta span {
+        font-size: 0.8em;
+    }
+
+    .recipe-description {
+        font-size: 0.9em;
+    }
+
+    .discover-button {
+        font-size: 0.9em;
+    }
+
+    .icon {
+        width: 20px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.3em;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+
+    .recipe-card, .skeleton-card {
+        margin-bottom: 15px;
+    }
+
+    .recipe-image, .details-image {
+        height: 150px;
+    }
+
+    .recipe-meta span {
+        font-size: 0.7em;
+    }
+
+    .discover-button {
+        font-size: 0.8em;
+    }
+}
+
+.recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+    .recipe-card {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .recipe-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+.recipe-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.details-image {
+    width: 100%;
+    height: 151px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.recipe-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.recipe-meta span {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #000000;
+}
+
+.recipe-meta span img {
+
+     margin-top: -2px;
+}
+
+
+.recipe-description {
+    flex-grow: 1;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #242326;
+    margin-top: 9px;
+}
+
+.discover-button {
+    background: transparent;
+    color: #F16E00;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0px;
+}
+
+.discover-button i {
+    margin-left: 12px;
+    color: #F16E00;
+}
+
+
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 5px 10px;
+
+}
+
+
+
+
+.ingredients-title, .etape-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.ingredients, .etape-description {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.etape-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.etape-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.etape-order {
+    font-weight: bold;
+    color: #F16E00;
+    margin-right: 5px;
+    display: inline;
+}
+
+.etape-name {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.etape-description {
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-top: 5px;
 }

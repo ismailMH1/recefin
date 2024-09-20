@@ -15,6 +15,7 @@ const HomeRecette = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+   
     axios.get('/api/recipes')
       .then(response => {
         if (Array.isArray(response.data)) {
@@ -32,6 +33,7 @@ const HomeRecette = () => {
         setLoading(false);
       });
 
+    // Fetch the selected recipe details if recipeId exists
     if (recipeId) {
       axios.get(`/api/recipes/${recipeId}`)
         .then(response => {
@@ -40,36 +42,35 @@ const HomeRecette = () => {
         .catch(error => {
           console.error('There was an error fetching the recipe details!', error);
         });
+    } else {
+      setSelectedRecipe(null);
     }
   }, [recipeId]);
 
   const handleBackClick = () => {
-    setSelectedRecipe(null); 
-    navigate('/'); 
+    setSelectedRecipe(null);
+    navigate('/');
   };
-  
 
-  const renderSkeletonCard = () => {
-    return (
-      <div className="recipe-card skeleton-card">
-        <div className="skeleton skeleton-image"></div>
-        <div className="recipe-info">
-          <div className="recipe-meta skeleton-meta">
-            <span className="skeleton skeleton-icon"></span>
-            <span className="skeleton skeleton-icon"></span>
-            <span className="skeleton skeleton-icon"></span>
-          </div>
-          <div className="skeleton skeleton-description"></div>
-          <div className="skeleton skeleton-button"></div>
+  const renderSkeletonCard = () => (
+    <div className="recipe-card skeleton-card">
+      <div className="skeleton skeleton-image"></div>
+      <div className="recipe-info">
+        <div className="recipe-meta skeleton-meta">
+          <span className="skeleton skeleton-icon"></span>
+          <span className="skeleton skeleton-icon"></span>
+          <span className="skeleton skeleton-icon"></span>
         </div>
+        <div className="skeleton skeleton-description"></div>
+        <div className="skeleton skeleton-button"></div>
       </div>
-    );
-  };
+    </div>
+  );
 
-return (
-  <div className="container">
-    <Nav onBackClick={handleBackClick} />
-    {selectedRecipe ? (
+  return (
+    <div className="container">
+      <Nav onBackClick={handleBackClick} />
+      {selectedRecipe ? (
         <div className="recipe-details">
           <h2>{selectedRecipe.title}</h2>
           <img src={`http://127.0.0.1:8000/images/${selectedRecipe.image}`} alt={selectedRecipe.title} className="details-image" />
@@ -100,7 +101,7 @@ return (
               {renderSkeletonCard()}
             </>
           ) : (
-            recipes.map((recipe) => ( // Ensure 'recipe' is defined in this scope
+            recipes.map((recipe) => (
               <div className="recipe-card" key={recipe.id}>
                 <img src={`http://127.0.0.1:8000/images/${recipe.image}`} alt={recipe.title} className="recipe-image" />
                 <div className="recipe-info">
@@ -110,9 +111,9 @@ return (
                     <span><img src={walletIcon} alt="Budget" className="icon" /> {recipe.budget}</span>
                   </div>
                   <p className="recipe-description">{recipe.description}</p>
-                  <button className="discover-button" onClick={() => navigate(`/${recipe.id}`)}> {/* Updated path */}
-                  Découvrir <i className="fas fa-arrow-right"></i>
-                </button>
+                  <button className="discover-button" onClick={() => navigate(`/${recipe.id}`)}>
+                    Découvrir <i className="fas fa-arrow-right"></i>
+                  </button>
                 </div>
               </div>
             ))
