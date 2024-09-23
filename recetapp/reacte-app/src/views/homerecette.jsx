@@ -6,7 +6,7 @@ import walletIcon from '../assets/wallet.svg';
 import clockIcon from '../assets/horloge.svg';
 import chefIcon from '../assets/chef.svg';
 import { useParams, useNavigate } from 'react-router-dom';
-import stepIcon from '../assets/steps.svg'; // Add this line at the top
+import stepIcon from '../assets/steps.svg';
 
 const HomeRecette = () => {
   const [recipes, setRecipes] = useState([]);
@@ -16,7 +16,6 @@ const HomeRecette = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-
     axios.get('/api/recipes')
       .then(response => {
         if (Array.isArray(response.data)) {
@@ -34,7 +33,6 @@ const HomeRecette = () => {
         setLoading(false);
       });
 
-    // Fetch the selected recipe details if recipeId exists
     if (recipeId) {
       axios.get(`/api/recipes/${recipeId}`)
         .then(response => {
@@ -82,21 +80,20 @@ const HomeRecette = () => {
           </div>
           <h4 className="ingredients-title">Ingrédients</h4>
           <p className="ingredients">{selectedRecipe.ingredients}</p>
-          <h4 className="etape-title">{selectedRecipe.etape}</h4>
-          {selectedRecipe.etapes.map((etape, index) => (
-          <div key={index} className="etape-item">
-          <div className="etape-left">
-          <img src={stepIcon} alt="Step Icon" className="etape-icon"  />
+          <h4 className="etape-title">Étapes</h4>
+          <div className="etape-list">
+            {selectedRecipe.etapes.map((etape, index) => (
+              <div key={index} className="etape-item">
+                <div className="etape-left">
+                  <img src={stepIcon} alt="Step Icon" className="etape-icon" />
+                </div>
+                <div className="etape-right">
+                  <h4 className="etape-name">{etape.name}</h4>
+                  <p className="etape-description">{etape.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="etape-right">
-            <h4 className="etape-name">
-              {etape.name}
-
-            </h4>
-            <p className="etape-description">{etape.description}</p>
-          </div>
-        </div>
-          ))}
         </div>
       ) : (
         <div className="recipe-list">

@@ -549,24 +549,32 @@
 
   .etape-item {
     display: flex;
-    align-items: flex-start; /* Align items to the start */
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
 
-}
+  .etape-left {
+    margin-right: 15px; 
+  }
 
-.etape-left {
-    display: flex;
-    align-items: center; /* Align icon and name vertically */
-
-}
-
-.etape-icon {
+  .etape-icon {
     width: 24px;
     height: 24px;
+  }
 
-}
+  .etape-right {
+    flex-grow: 1;
+  }
 
-.etape-description {
-    font-size: 0.9em;
-    line-height: 1.4;
-    margin-top: 5px;
-}
+  .etape-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .etape-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+  }
+
