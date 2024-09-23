@@ -1,7 +1,7 @@
 # recefin
 
 
-## commands to run Project laravel  After cloning : ismail
+## commands to run Project laravel  After cloning : ismail fngfhfg
 
 
 - composer i 
