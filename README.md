@@ -1,7 +1,7 @@
 # recefin
 
 
-## commands to run Project laravel  After cloning :
+## commands to run Project laravel  After cloning :rtrtr
 
 
 - composer i 
